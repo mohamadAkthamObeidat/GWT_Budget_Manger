@@ -1,0 +1,5 @@
+package com.mohammad.obeidat.client;
+
+public enum CATEGORIES {
+	CLOTHES, TRANSPORT, FOOD, HEALTH, BILLS, LOANS, SCHOOL, SOFTWARE, ACCESSORIES, SMART_DEVICES, OTHER
+}
