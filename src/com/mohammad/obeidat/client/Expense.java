@@ -4,132 +4,98 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Expense {
-    // Format Current Date & Time Using Specific Pattern.
+	// Format Current Date & Time Using Specific Pattern.
 
-    DateTimeFormatter formattedDate = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	DateTimeFormatter formattedDate = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
-    // Get Current Date & Time.
+	// Get Current Date & Time.
 
-    LocalDateTime currentDate = LocalDateTime.now();
+	LocalDateTime currentDate = LocalDateTime.now();
 
+	// Instance Variables.
 
+	private String name, description, date;
 
-    // Instance Variables.
+	private String category;
 
-    private String name, description, date;
+	private int value;
 
-    private CATEGORIES category;
+	// Constructor to initialize expense data.
 
-    private int value;
+	public Expense(String name, int value, String description, String category) {
 
+		this.name = name;
 
+		this.value = value;
 
-    // Constructor to initialize expense data.
+		this.description = description;
 
-    public Expense(String name, int value, String description, CATEGORIES category) {
+		this.category = category;
 
-        this.name = name;
+		this.setDate(formattedDate.format(currentDate));
 
-        this.value = value;
+	}
 
-        this.description = description;
+	// Setters And Getters.
 
-        this.category = category;
+	public String getName() {
 
-        this.setDate(formattedDate.format(currentDate));
+		return name;
 
-    }
+	}
 
+	public void setName(String name) {
 
+		this.name = name;
 
+	}
 
+	public int getValue() {
 
-    // Setters And Getters.
+		return value;
 
-    public String getName() {
+	}
 
-        return name;
+	public void setValue(int value) {
 
-    }
+		this.value = value;
 
+	}
 
+	public String getDescription() {
 
-    public void setName(String name) {
+		return description;
 
-        this.name = name;
+	}
 
-    }
+	public void setDescription(String description) {
 
+		this.description = description;
 
+	}
 
+	public String getCategory() {
 
+		return category;
 
-    public int getValue() {
+	}
 
-        return value;
+	public void setCategory(String category) {
 
-    }
+		this.category = category;
 
+	}
 
+	public String getDate() {
 
-    public void setValue(int value) {
+		return date;
 
-        this.value = value;
+	}
 
-    }
+	public void setDate(String date) {
 
+		this.date = date;
 
-
-
-
-    public String getDescription() {
-
-        return description;
-
-    }
-
-
-
-    public void setDescription(String description) {
-
-        this.description = description;
-
-    }
-
-
-
-
-
-    public CATEGORIES getCategory() {
-
-        return category;
-
-    }
-
-
-
-    public void setCategory(CATEGORIES category) {
-
-        this.category = category;
-
-    }
-
-
-
-
-
-    public String getDate() {
-
-        return date;
-
-    }
-
-
-
-    public void setDate(String date) {
-
-        this.date = date;
-
-    }
+	}
 
 }
