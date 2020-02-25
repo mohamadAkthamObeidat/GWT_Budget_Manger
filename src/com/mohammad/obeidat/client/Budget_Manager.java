@@ -173,13 +173,19 @@ public class Budget_Manager implements EntryPoint {
 				int balance = Integer.parseInt(userBalance.getText());
 
 				user = new User(name, salary, balance);
+				updateInfo();
+
+				
+			}
+
+			private void updateInfo() {
 
 				helloMessage.setText("Hello " + user.getName() + " here's your Information: ");
 				monthlySalary.setText("Monthly Salary: " + user.getMonthlySalary());
 				currentSalary.setText("Current Salary: " + user.getCurrentSalary());
 				currentBalance.setText("Current Balance: " + user.getBalance());
-
 				RootPanel.get().add(expensesPanel);
+
 			}
 		});
 
@@ -203,9 +209,11 @@ public class Budget_Manager implements EntryPoint {
 				String expenseDiscription = expenseDescription_TB.getText();
 
 				user.addNewExpense(new Expense(expenseName, expenseValue, expenseDiscription, expenseCategory));
-				
+				updateInfo();
+
 			}
 		});
+
 		mainPanel.add(vPanel);
 		mainPanel.add(vPanel_Two);
 

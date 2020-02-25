@@ -149,14 +149,14 @@ public class User {
 
 	// Utility Function To Update Balance
 
-	public void updateSalaryAndBalance(int newSalaryValue) {
+	public void updateSalaryAndBalance(int expenseValue) {
 
 		if (currentSalary >= 0) {
-			this.currentSalary -= newSalaryValue;
-			this.balance -= newSalaryValue;
+			this.currentSalary -= expenseValue;
+			this.balance -= expenseValue;
 		} else {
-			this.currentSalary += newSalaryValue;
-			this.balance -= newSalaryValue;
+			this.currentSalary += expenseValue;
+			this.balance -= expenseValue;
 		}
 	}
 
